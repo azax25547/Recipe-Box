@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ViewRecipe from "./components/ViewRecipe";
 import RecipeList from "./components/RecipeList";
+import AddRecipe from "./components/AddRecipe";
 import "./App.css";
 class App extends Component {
   state = {
@@ -115,6 +116,11 @@ class App extends Component {
     });
   };
 
+  additems = () => {
+    this.setState({
+      recipe: [...this.state.recipe]
+    });
+  };
   render() {
     return (
       <>
@@ -140,6 +146,7 @@ class App extends Component {
                 directions={this.state.directions}
               />
             </div>
+            <AddRecipe add={this.state.recipe} />
           </div>
         </div>
       </>

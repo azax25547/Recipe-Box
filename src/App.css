@@ -10,7 +10,7 @@ body {
   border-radius: 10px;
   margin: 10px 0;
   max-height: 90vh;
-  padding: 10px;
+  padding: 5px;
 }
 .lists {
   height: 150px;
@@ -27,7 +27,7 @@ body {
 }
 
 .recipe-info {
-  height: 380px;
+  height: 350px;
   overflow-y: scroll;
   text-align: justify;
   padding: 10px;
@@ -48,4 +48,7 @@ body {
 }
 .recipe-info::-webkit-scrollbar-thumb {
   background-color: #000000;
+}
+.modalwrapper {
+  text-align: center;
 }
