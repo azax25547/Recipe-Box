@@ -3,6 +3,7 @@ import ViewRecipe from "./components/ViewRecipe";
 import RecipeList from "./components/RecipeList";
 import AddRecipe from "./components/AddRecipe";
 import "./App.css";
+
 class App extends Component {
   state = {
     recipe: [
@@ -108,6 +109,7 @@ class App extends Component {
     directions: [],
     name: ""
   };
+
   showList = i => {
     this.setState({
       ingredients: this.state.recipe[i].ingredients,
@@ -116,9 +118,9 @@ class App extends Component {
     });
   };
 
-  additems = () => {
+  additems = i => {
     this.setState({
-      recipe: [...this.state.recipe]
+      recipe: this.state.recipe.concat(i)
     });
   };
   render() {
@@ -146,7 +148,7 @@ class App extends Component {
                 directions={this.state.directions}
               />
             </div>
-            <AddRecipe add={this.state.recipe} />
+            <AddRecipe add={this.additems} />
           </div>
         </div>
       </>

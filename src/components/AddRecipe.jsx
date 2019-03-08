@@ -3,7 +3,7 @@ import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    width: "500px",
+    width: "400px",
     height: "400px",
     top: "50%",
     left: "50%",
@@ -38,7 +38,8 @@ class AddRecipe extends Component {
     recipe.recipe = e.target.recipeName.value;
     recipe.ingredients = e.target.ingredients.value.split("/");
     recipe.directions = e.target.directions.value.split("/");
-    this.props.add.push(recipe);
+    this.props.add(recipe);
+    recipe = {};
     this.closeModal();
   };
   render() {
@@ -85,7 +86,9 @@ class AddRecipe extends Component {
                   placeholder="Directions: group by '/'"
                   required
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="btn btn-info mt-2">
+                  Submit
+                </button>
               </form>
             </div>
           </Modal>
