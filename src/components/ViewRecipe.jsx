@@ -1,7 +1,11 @@
 import React from "react";
-// import EditRecipe from "./EditRecipe";
 
-export default function ViewRecipe({ recipeName, ingredients, directions }) {
+export default function ViewRecipe({
+  recipeName,
+  ingredients,
+  directions,
+  update
+}) {
   let ingredient = ingredients.map((v, i) => {
     return (
       <li key={i} className="lead">
@@ -19,10 +23,7 @@ export default function ViewRecipe({ recipeName, ingredients, directions }) {
   return ingredient.length > 0 ? (
     <>
       <div className="recipe-name">
-        <h1>
-          {recipeName}
-          {/* <EditRecipe name={recipeName} ing={ingredients} des={directions} /> */}
-        </h1>
+        <h1>{recipeName}</h1>
       </div>
       <h3>Ingredients: </h3>
       <ol>{ingredient}</ol>

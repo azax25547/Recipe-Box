@@ -123,6 +123,19 @@ class App extends Component {
       recipe: this.state.recipe.concat(i)
     });
   };
+
+  showItems = i => {
+    alert("Hii");
+  };
+
+  updateItems = i => {
+    let newState = [...this.state.recipe];
+    newState.splice(i, 1);
+    console.log(newState);
+    this.setState({
+      recipe: [...newState]
+    });
+  };
   render() {
     return (
       <>
@@ -136,6 +149,7 @@ class App extends Component {
                     key={i}
                     list={v.recipe}
                     get={() => this.showList(i)}
+                    update={() => this.updateItems(i)}
                   />
                 );
               })}
